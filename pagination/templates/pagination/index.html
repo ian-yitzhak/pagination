@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+
+{% load static %}
+<head>
+	<title>blog</title>
+</head>
+
+<link rel="stylesheet" type="text/css" href="{%  static 'pagination/main.css' %}">
+<body>
+
+
+{% block content %}
+
+
+
+<center><h2>Blog</h2></center>
+
+
+
+
+
+
+
+
+	{%  for data in posts %}
+
+	<div class="container-6">
+
+
+
+
+<h2>{{data.Title}}</h2>
+
+<p>{{ data.Content}}</p>
+
+
+<a class="btn btn-outline-info" href="{{ data.Tag}}" role="button">seemore</a>
+
+
+
+</div>
+
+{% endfor %}
+
+
+
+
+
+{% include "pagination.html" with page=posts %}
+
+{% endblock %}
+
+
+
+
+
+
+
+</body>
+</html>
